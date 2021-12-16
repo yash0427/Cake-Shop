@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/style1.css">
+    <title>Cart</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="row clearfix">
+        <a href="#" class="logo ">Cake n Bake</a>
+        <ul class="links">
+            <li class="sign"><a href="/signin">SignIn/ Sign up</a></li>
+            <!-- <li class="signup"><a href="signin.html">SignUp</a></li> -->
+            <li class="ocake"><a href="#">Ocaasion Cake</a>
+            <ul class="dropmenu">
+               <li><a href="/cake/Birthday_Cakes" >Birthday Cakes</a></li>
+               <li><a href="/cake/Anniversary_Cakes">Anniversary Cakes</a></li>
+               <li><a href="/cake/Christmas_Cakes">Christmas Cakes</a></li>
+               <li><a href="/cake/Retirement_Cakes">Retirement Cakes</a></li>
+               <li><a href="/cake/Valentines_Cakes">Valentine's Cakes</a></li>
+               <li><a href="/cake/Baby_Shower_Cakes">Baby Shower Cakes</a></li>
+            </ul>
+            <li class="fcake"><a href="#">Cake flavours</a>
+              <ul class="dropmenu">
+                        <li><a href="/cake/Chocolate_Cakes" >Chocolate Cake</a></li>
+                        <li><a href="/cake/RedVelvet_Cakes">Red Velvet Cake</a></li>
+                        <li><a href="/cake/Oreo_Cakes">Oreo Cake</a></li>
+                        <li><a href="/cake/Pineapple_Cakes">Pineapple Cake</a></li>
+                        <li><a href="/cake/Strawberry_Cakes">Strawberry Cake</a></li>
+                        <li><a href="/cake/Vanilla_Cakes">Vanilla Cake</a></li>
+                        <li><a href="/cake/Fruit_Cakes">Fruit Cake</a></li>
+                        <li><a href="/cake/Black_Forest_Cakes">Black Forest Cake</a></li>
+                    </ul>
+            </li>
+            <li class="cart"><a href="#">Cart</a></li>
+
+        </ul>
+    </div>
+  </nav>
+
+
+  {{!-- <section class="container content-section">
+      <h2 class="section-header">CART</h2>
+      <div class="cart-row">
+          <span class="cart-item cart-header cart-column">ITEM</span>
+          <span class="cart-price cart-header cart-column">PRICE</span>
+          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+      </div>
+      <div class="cart-items">
+      </div>
+  </section> --}}
+    
+    <table class="backc">
+     <tr>
+        <th style="font-size: 20px; padding:20px">Product</th>
+        <th style="font-size: 20px; padding:20px">Quantity & Price</th>
+        
+      </tr>
+      {{#each cart}}
+      <form action="/removeFromCart" method="POST">
+      <tr >
+        <td >
+          <div class="cart-info" style="padding:20px; margin:25px; background-color : #ffff">
+            <img src="{{link}}" style="width: 200px;" alt="">
+            <div>
+              <p style="font-size: 20px;">{{name}}</p>
+              {{!-- <small style="font-size: 20px;">Price: Rs{{price}}</small> --}}
+              <button type="submit" class="btn1">Remove</button>
+            </div>
+        <td style="font-size: 20px;">{{quantity}}</td>
+      </tr>
+
+      <input type="text" value="{{user_name}}" name="user_name" style="display: none;"> 
+      <input type="text" value="{{user_email}}" name="user_email" style="display: none;"> 
+      <input type="text" value="{{link}}" name="link" style="display: none;"> 
+      <input type="text" value="{{name}}" name="name" style="display: none;"> 
+      <input type="number" value="{{price}}" name="price" style="display: none;"> 
+
+      </form>
+      {{/each}}
+    </table>
+    
+
+    <div class="cart-total">
+          <strong class="cart-total-title">Total</strong>
+          <span class="cart-total-price"> Rs. {{total}}</span>
+    </div>
+
+    <button class="obtn" onclick="order()">Place Order</button>
+    <script>
+      function order(){
+        alert("Order Placed Successfully");
+      }
+    </script>
+  
+</body>
+
+</html>

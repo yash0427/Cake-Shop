@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@300&display=swap" rel="stylesheet">
+    <!-- <script src="signin1.js"></script> -->
+   
+  
+</head>
+<body>
+<!-- <body class="sin">
+    <form class="box" action="signin.html" method="POST">
+        <h2>SIGN IN</h2>
+        <input type="text" name="" placeholder="Enter Username" id="username">
+        <input type="password" name="" placeholder="Enter Password" id="password">
+        <input type="submit" class="sg" name="" value="Signin" onclick="validate()">
+    </form> -->
+    <div class="backgroundimage">
+        <div class="container">
+            <form action="/login" method="POST" class="form " id="login">
+                <h1 class="form__title ">Sign In</h1>
+                <div class="form__input-group">
+                    <input type="text" value="{{user_email}}" name="user_email" class="form__input" autofocus placeholder="Username or email">
+                    
+                </div>
+                <div class="form__input-group">
+                    <input type="password" value="{{user_password}}" name="user_password" class="form__input" autofocus placeholder="Password">
+                    
+                </div>
+                <button class="form__button" type="submit">Sign In</button>
+                {{!-- <p class="form__text">
+                    <a href="#" class="form__link">Fogort Password?</a>
+                </p> --}}
+                <p class="form__text">
+                    <p  class="form__link" onclick="showCreate()" id="linkCreateAccount">Dont have an account?Create Account</p>
+                </p>
+            </form>
+
+
+            <form action="/create" method="post" class="form form--hidden "  id="createAccount">
+                <h1 class="form__title ">Create Account</h1>
+                <div class="form__message form__message--error"></div>
+                <div class="form__input-group">
+                    <input type="text" id="signupUsername" name="username" class="form__input" autofocus placeholder="Username">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-group">
+                    <input type="text" name="email" class="form__input" autofocus placeholder="Email Address">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-group">
+                    <input type="text" name="address" class="form__input" autofocus placeholder="Address">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-group">
+                    <input type="text" name="contact" class="form__input" autofocus placeholder="Contact-no">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-group">
+                    <input type="password" name="password" class="form__input" autofocus placeholder="Password">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <div class="form__input-data">
+                    <input type="password" name="cpassword" class="form__input" autofocus placeholder="Confir Password">
+                    <div class="form__input-error-message"></div>
+                </div>
+                <button class="form__button" type="submit">Sign Up</button>
+                
+                <p class="form__text">
+                    <a  class="form__link" onclick="showLogin()" id="linkLogin">Already have an account?Sign In</a>
+                </p>
+            </form>
+        </div>
+
+    </div>
+   
+<script>
+const loginForm = document.querySelector("#login");
+const createAccountForm = document.querySelector("#createAccount");
+
+function showCreate(){
+     loginForm.classList.add("form--hidden");
+        createAccountForm.classList.remove("form--hidden");
+}
+function showLogin(){
+     loginForm.classList.remove("form--hidden");
+        createAccountForm.classList.add("form--hidden");
+}
+</script>   
+    
+</body>
+</html>

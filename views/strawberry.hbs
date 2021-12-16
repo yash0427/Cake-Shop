@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Our Cakes</title>
+    <link rel="stylesheet" href="../css/style1.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Flamenco:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="row clearfix">
+          <a href="#" class="logo ">Cake n Bake</a>
+          <ul class="links">
+              <li class="sign"><a href="/signin">SignIn/ Sign up</a></li>
+              <!-- <li class="signup"><a href="signin.html">SignUp</a></li> -->
+              <li class="ocake"><a href="#">Occasion Cake</a>
+                <ul class="dropmenu" id="occasion">
+                  <li><a href="/cake/Birthday_Cakes" >Birthday Cakes</a></li>
+                        <li><a href="/cake/Anniversary_Cakes">Anniversary Cakes</a></li>
+                        <li><a href="/cake/Christmas_Cakes">Christmas Cakes</a></li>
+                        <li><a href="/cake/Retirement_Cakes">Retirement Cakes</a></li>
+                        <li><a href="/cake/Valentines_Cakes">Valentine's Cakes</a></li>
+                        <li><a href="/cake/Baby_Shower_Cakes">Baby Shower Cakes</a></li>
+              </ul>
+              </li>
+              <li class="fcake"><a href="#">Cake flavours</a>
+                <ul class="dropmenu " id="flavours">
+                  <li><a href="/cake/Chocolate_Cakes" >Chocolate Cake</a></li>
+                        <li><a href="/cake/RedVelvet_Cakes">Red Velvet Cake</a></li>
+                        <li><a href="/cake/Oreo_Cakes">Oreo Cake</a></li>
+                        <li><a href="/cake/Pineapple_Cakes">Pineapple Cake</a></li>
+                        <li><a href="/cake/Strawberry_Cakes">Strawberry Cake</a></li>
+                        <li><a href="/cake/Vanilla_Cakes">Vanilla Cake</a></li>
+                        <li><a href="/cake/Fruit_Cakes">Fruit Cake</a></li>
+                        <li><a href="/cake/Black_Forest_Cakes">Black Forest Cake</a></li>
+              </ul>
+              </li> 
+              <li class="cart"><a href="/showcart">Cart</a></li>
+
+          </ul>
+      </div>
+  </nav>
+  
+  <div id="border" class="picture grid">
+    <div class="chocoi">
+      <h1>{{name1}}Cake Order Online</h1>
+    <h3>Just like the monsoon is incomplete without rain, any celebration is and will always be incomplete<br> with a chocolate decadence. Full of heavenly cocoa, these are now available from a simple melt in<br> mouth chocolate cake to refined versions of chocolate fudge cake, Ferrero Rocher jam-packed<br> indulgence,choco chips cake, choco-truffle and many more.</h3>
+    <img src="/images/cakes.jpg" class="chocolateimg" >
+  </div>
+  <!-- <div class="chocoimg">
+    <a href="chocolate.html"> <img src="https://i7.fnp.com/assets/images/custom/cake-2020/cakes-by-flavor/1-Chocolate-Cakes.jpg" alt=""></img></a>
+  </div> -->
+    
+    {{#each variat}}
+    <div class="row">
+      {{#each row}}
+      <div class="col">
+        <form action="/cart" method="post">
+        <input type="text" value="{{name}}" name="name" style="display: none;"> 
+        <input type="text" value="{{link}}" name="link" style="display: none;"> 
+          
+        
+        <a href="chocolate.html"> <img src={{link}} alt="" class="center"></img></a>
+        <h3 class="name1">{{name}}</h3>
+        <div class="box">
+          <label class="lprice">Price</label>
+          <select name="Kg" class="cost">
+            <option value="0.5 KG  Rs/-399">0.5 KG  Rs/-399</option>
+            <option value="1 KG    Rs/-699">1 KG  Rs/-699</option>
+            <option value="2 KG  Rs/-1500">2 KG  Rs/-1500</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">ADD</button>
+
+        </form>
+      </div>
+      {{/each}}
+      
+    </div>
+    {{/each}}
+
+    </div>
+
+  </div>
+
+  </body>
+
+</html>
